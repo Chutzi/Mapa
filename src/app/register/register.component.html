@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="ion-padding ion-text-center">
+  <p>¡Únete para combatir el crimen!</p>
+  <form novalidate [formGroup]="formsGroup" (ngSubmit)="register()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre de usuario</ion-label>
+        <ion-input type="text" formControlName="mail"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="pass"></ion-input>
+      </ion-item>
+    </ion-list>
+    <p></p>
+    <div class="col">
+      <ion-button type="submit" [disabled]="!formsGroup.valid">Enviar</ion-button>
+    </div>
+    <p></p>
+
+    <!--Lo quitan xd-->
+    <img src="https://www.poresto.net/u/fotografias/m/2020/12/11/f608x342-36666_66389_0.jpg" />
+    <p>Gracias, que tenga buen día</p>
+  </form>
+</ion-content>

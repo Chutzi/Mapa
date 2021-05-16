@@ -1,0 +1,11 @@
+<ion-content class="ion-padding ion-text-center">
+  <h2>Gravedad de daño</h2><br/>
+  <ion-item>
+    <ion-label>Gravedad:</ion-label>
+    <ion-range min="1" max="10" step="1" snaps="true" pin="true" type="number" name="sliderValue" [(ngModel)]="severity">
+      <ion-label slot="start">1</ion-label>
+      <ion-label slot="end">10</ion-label>
+    </ion-range>
+  </ion-item>
+  <ion-button (click)="postEvent()">ENVIAR</ion-button>
+</ion-content>
