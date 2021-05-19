@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Sin Uso
+      Mi perfil
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,5 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <img *ngIf="this.photo.getPhoto() != undefined" src={{this.photo.getPhoto().webviewPath}}>
 </ion-content>

@@ -21,6 +21,11 @@
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" formControlName="pass"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-label position="floating">Foto</ion-label>
+        <ion-input type="button" (click)="photo()"></ion-input>
+        <ion-img *ngIf='this.captured != undefined' [src]='this.captured.webPath'></ion-img>
+      </ion-item>
     </ion-list>
     <p></p>
     <div class="col">

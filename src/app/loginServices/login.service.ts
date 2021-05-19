@@ -23,7 +23,16 @@ export interface LoginResponseData {
 export class LoginService {
   private usuarioLoggeado = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+
+  }
+
+  async getEmail()
+  {
+    const ret = await Storage.get({ key: 'user' });
+    const user = JSON.parse(ret.value);
+    return user.email;
+  }
 
   async isLogged() {
     const ret = await Storage.get({ key: 'user' });
