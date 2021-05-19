@@ -84,11 +84,6 @@ export class CameraService {
     // Use webPath to display the new image instead of base64 since it's
       // already loaded into memory
       this.photo = {  filepath: fileName,  webviewPath: photo.webPath};
-      Storage.set({
-        key: 'fotos',
-        value: JSON.stringify(this.photo)
-      });
-
       const url = "https://eltrocrime-default-rtdb.firebaseio.com/";
       const email = await this.login.getEmail();
       const data = new PhotoData(email, base64Data);
