@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-title>
       Mi perfil
     </ion-title>
@@ -12,5 +12,31 @@
       <ion-title size="large">Tab 3</ion-title>
     </ion-toolbar>
   </ion-header>
-  <img *ngIf="this.photo.getPhoto() != undefined" src={{this.photo.getPhoto().webviewPath}}>
+
+  <ion-card color="light">
+  <div class="img-wrapper">
+    <img *ngIf="this.photo.getPhoto() != undefined" src={{this.photo.getPhoto().webviewPath}}>
+    <ion-button color="light">
+      <ion-icon slot="icon-only" name="camera-outline" color="medium">
+      </ion-icon>
+    </ion-button>
+  </div>
+  <ion-card-content class="ion-text-center">
+    <h2>El madada</h2>
+    <ion-text color="medium">
+      <div style="display: flex;" class="ion-justify-content-center">
+        <ion-icon name="location-outline" color="medium">
+        </ion-icon>
+        <p>2345 palmas, texas, USA.</p>
+      </div>
+    </ion-text>
+  </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Modo oscuro</ion-label>
+    <ion-toggle slot="end" (ionChange)="onClick($event)"></ion-toggle>
+  </ion-item>
+  
+
 </ion-content>
