@@ -1,3 +1,4 @@
+import { GeoService } from './../map/geo.service';
 import { DenunciaModalComponent } from './denuncia-modal/denuncia-modal.component';
 import { EventServiceService } from './event-service.service';
 import { Component, ViewChild } from '@angular/core';
@@ -29,12 +30,15 @@ export class Tab1Page {
   constructor(
     private eventService: EventServiceService,
     private modalController: ModalController,
-    private loadingController: LoadingController)
+    private loadingController: LoadingController,
+    private geo : GeoService)
     {
       this.waitForPosition();
       Geolocation.watchPosition({}, position => {
         this.actualLat = position.coords.latitude;
         this.actualLong = position.coords.longitude;
+        geo.lat = position.coords.latitude;
+        geo.lng = position.coords.longitude;
         if(this.loading)
         {
           this.loading.dismiss();

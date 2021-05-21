@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private router : Router, private loadingCtrl : LoadingController, private alertCtrl : AlertController, private loginService : LoginService) {
    this.formsGroup = new FormGroup({
       mail: new FormControl('', [Validators.required, Validators.pattern(this.regexMail), Validators.maxLength(100)]),
-      pass: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
+      pass: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
   });
    }
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl("/register");
   }
 
-  login()
+  async login()
   {
     this.loadingCtrl.create(
       {
@@ -45,11 +45,11 @@ export class LoginComponent implements OnInit {
       let authObs: Observable<LoginResponseData>;
       authObs = this.loginService.login(this.formsGroup.get('mail').value, this.formsGroup.get('pass').value);
 
-      authObs.subscribe(response => {
+      authObs.subscribe(async response => {
         console.log(response);
         loadingEl.dismiss();
+        await this.loginService.setUsuarioLoggeado(true, response);
         this.router.navigateByUrl("/service/tabs/map");
-        this.loginService.setUsuarioLoggeado(true, response);
       }, errorResponse=>
       {
         loadingEl.dismiss();

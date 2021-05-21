@@ -26,8 +26,9 @@ export class LoginGuard implements CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
+
       return this.loginService.isLogged().then(result => {
-        console.log("ACTIVADO" + result);
+        console.log("ACTIVADO " + result);
         if(!result)
         {
           this.router.navigateByUrl("/login");

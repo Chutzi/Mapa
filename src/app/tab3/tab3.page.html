@@ -22,21 +22,23 @@
     </ion-button>
   </div>
   <ion-card-content class="ion-text-center">
-    <h2>El madada</h2>
+    <h2>{{this.email}}</h2>
     <ion-text color="medium">
       <div style="display: flex;" class="ion-justify-content-center">
         <ion-icon name="location-outline" color="medium">
         </ion-icon>
-        <p>2345 palmas, texas, USA.</p>
+        <p>Lat : {{this.geo.lat}} Lng: {{this.geo.lng}} </p>
       </div>
     </ion-text>
   </ion-card-content>
   </ion-card>
 
+  <!--Nuevo-->
   <ion-item>
-    <ion-label>Modo oscuro</ion-label>
-    <ion-toggle slot="end" (ionChange)="onClick($event)"></ion-toggle>
+    <ion-icon slot="start" name="moon"></ion-icon>
+    <ion-label>Toogle Dark Mode</ion-label>
+    <ion-toggle slot="end" [ngModel]="!darkMode" (ionChange)="change()"></ion-toggle>
   </ion-item>
-  
+
 
 </ion-content>

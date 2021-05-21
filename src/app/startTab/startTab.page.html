@@ -10,22 +10,10 @@
   <ion-card>
     <ion-buttons class="formHeader">
       <ion-button class="boton_personalizado" size="large" strong (click)="mostrarModal()">Denunciar</ion-button>
-      <ion-button class="boton_personalizado" href="5551234567" size="large" strong>
-        <a href="5551234567">EMERGENCIA</a>
+      <ion-button class="boton_personalizado" size="large" strong>
+        <a href="tel:911">EMERGENCIA</a>
       </ion-button>
     </ion-buttons>
   </ion-card>
-
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Latitud</ion-label>
-      <ion-input type="number" [(ngModel)]="testLat"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Longitud:</ion-label>
-      <ion-input type="number" [(ngModel)]="testLong"></ion-input>
-    </ion-item>
-  </ion-list>
-
   <app-map></app-map>
 </ion-content>
