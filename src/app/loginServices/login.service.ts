@@ -24,7 +24,7 @@ export interface LoginResponseData {
 export class LoginService {
   private usuarioLoggeado = false;
 
-  useStorage = false;
+  useStorage = true;
 
   connection : Promise<SQLiteObject>;
 

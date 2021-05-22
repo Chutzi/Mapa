@@ -7,17 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() { }
-
-
-  //Nuevo
-  initializeApp() {
-    this.changeDarkMode();
-  }
-
-  changeDarkMode() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    if (prefersDark.matches) {
-      document.body.classList.toggle('dark');
-    }
-  }
 }

@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" ion-header class="ion-text-center">
   <ion-toolbar color="tertiary">
     <ion-title>
       Mi perfil
@@ -32,13 +32,5 @@
     </ion-text>
   </ion-card-content>
   </ion-card>
-
-  <!--Nuevo-->
-  <ion-item>
-    <ion-icon slot="start" name="moon"></ion-icon>
-    <ion-label>Toogle Dark Mode</ion-label>
-    <ion-toggle slot="end" [ngModel]="!darkMode" (ionChange)="change()"></ion-toggle>
-  </ion-item>
-
 
 </ion-content>
